@@ -21,9 +21,6 @@ public class LevelMeter extends JComponent {
 		this.setLayout(null);
 	}
 	
-	void fireEvent() {
-	}
-	
 	public void setValue(int value) {
 		this.value = value;
 	}

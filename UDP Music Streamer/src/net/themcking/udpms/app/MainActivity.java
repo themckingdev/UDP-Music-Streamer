@@ -4,6 +4,8 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 
 import javax.swing.*;
 import javax.swing.event.ListSelectionEvent;
@@ -184,11 +186,40 @@ public class MainActivity implements ListSelectionListener, ActionListener {
 		timebar.setMaxTime(time.getSeconds(600));
 		timebar.setCurrentTime(time.getSeconds(150));
 		
-		//Volume Control
-		LevelMeter vol = new LevelMeter();
-		vol.setValue(10);
-		vol.setBounds(0, 0, panel6[1].getBounds().width, panel6[1].getBounds().height);
-		panel6[1].add(vol);
+		//Level Meter
+		LevelMeter lv = new LevelMeter();
+		lv.setValue(10);
+		lv.setBounds(0, 0, panel6[1].getBounds().width, panel6[1].getBounds().height);
+		panel6[1].add(lv);
+		
+		main.addMouseListener(new MouseListener() {
+
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				System.out.println("Mouse clicked");
+			}
+
+			@Override
+			public void mousePressed(MouseEvent e) {
+				System.out.println("Mouse pressed");
+			}
+
+			@Override
+			public void mouseReleased(MouseEvent e) {
+				System.out.println("Mouse released");
+			}
+
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				System.out.println("Mouse entered");
+			}
+
+			@Override
+			public void mouseExited(MouseEvent e) {
+				System.out.println("Mouse exited");
+			}
+			
+		});
 		
 		//Control Buttons
 		//button_prev = new MuteButton();
